@@ -6,9 +6,9 @@ import java.util.Stack;
 public class 滑动窗口的最大值 {
     public static void main(String[] args) {
        int[] nums = new int[]{1,3,-1,-3,7};
-
-        System.out.println(Arrays.toString(maxSlidingWindow(nums,3)));
+       System.out.println(Arrays.toString(maxSlidingWindow(nums, 3)));
     }
+
     public static  int[] maxSlidingWindow(int[] nums, int k) {
         if(nums.length<k||k==0){
             return new int[]{};
