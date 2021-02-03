@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 //n叉树的后序遍历
 public class Test590 {
     public static void main(String[] args) {
-
+      Node emptyNode = null;
+      postorder2(emptyNode);
     }
 
     public static List<Integer> postorder1(Node root) {
@@ -23,6 +21,7 @@ public class Test590 {
     }
 
     public static List<Integer> postorder2(Node root) {
+        //迭代法，用stack
         Stack<Node> sk = new Stack<>();
         List<Integer> result = new ArrayList<>();
         sk.push(root);
@@ -30,11 +29,14 @@ public class Test590 {
             Node curNode = sk.pop();
             if (curNode != null) {
                 result.add(curNode.val);
-
-            } else {
-                sk.pop();
+                for (int i = 0; i < curNode.children.size(); i++) {
+                    if(curNode.children.get(i)!=null){
+                        sk.push(curNode.children.get(i));
+                    }
+                }
             }
         }
+        Collections.reverse(result);
         return result;
     }
 }
