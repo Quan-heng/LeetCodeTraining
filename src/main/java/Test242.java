@@ -27,7 +27,6 @@ public class Test242 {
         }
 
         for (Integer value : map.values()) {
-
             if (value != 0) {
                 return false;
             }
