@@ -13,7 +13,7 @@ public class Test144 {
         if (root == null) {
             return result;
         }
-        /*if(root.right==null&&root.left==null){ 中序遍历加上效率100%，前后遍历去
+        /*if(root.right==null&&root.left==null){ 中序遍历加上效率100%，前后遍历去100%
             result.add(root.val);
             return result;
         }*/
