@@ -6,10 +6,10 @@ public class 丑数 {
     }
 
     public static int nthUglyNumber(int n) {
-        int result = 1;
+        long result = 1;
         int i = 1;
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
-        heap.add(1);
+        PriorityQueue<Long> heap = new PriorityQueue<>();
+        heap.add(result);
         while (i <= n) {
             result = heap.poll();
             while (!heap.isEmpty() && heap.peek() == result) {
@@ -20,6 +20,6 @@ public class 丑数 {
             heap.add(result * 5);
             i++;
         }
-        return result;
+        return (int)result;
     }
 }
