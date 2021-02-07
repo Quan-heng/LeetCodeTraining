@@ -13,10 +13,9 @@ public class Test104 {
         node20.left = node15;
         node20.right = node7;
         System.out.println(maxDepth(root));
-
     }
 
-    //1.递归法
+    //1.递归法，深度优先
     public static int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -28,32 +27,28 @@ public class Test104 {
         return Math.max(leftDepth, rightDepth) + 1;
     }
 
-    //2.队列法
+    //2.队列法,广度优先
     public static int maxDepth1(TreeNode root) {
         if (root == null) {
             return 0;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        int result = 0;
-        TreeNode curNode;
-        Queue<TreeNode> subQueue;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        int ans = 0;
         while (!queue.isEmpty()) {
-            result++;
-            subQueue = new LinkedList<>();
-            while (!queue.isEmpty()) {
-                curNode = queue.remove();
-                if (curNode.left != null) {
-                    subQueue.add(curNode.left);
+            int size = queue.size();
+            while (size > 0) {
+                TreeNode node = queue.poll();
+                if (node.left != null) {
+                    queue.offer(node.left);
                 }
-                if (curNode.right != null) {
-                    subQueue.add(curNode.right);
+                if (node.right != null) {
+                    queue.offer(node.right);
                 }
+                size--;
             }
-            queue = subQueue;
+            ans++;
         }
-        return result;
-
-
+        return ans;
     }
 }
