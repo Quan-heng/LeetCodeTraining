@@ -1,5 +1,5 @@
 /**
- *
+ * 递归，深度优先
  */
 public class 二叉树最小深度111 {
     public static void main(String[] args) {
