@@ -7,7 +7,32 @@ public class Test94 {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root!=null){
+            result.addAll(inorderTraversal(root.left));
+            result.add(root.val);
+            result.addAll(inorderTraversal(root.right));
+        }
+        return result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if(root==null){
             return result;
