@@ -9,8 +9,10 @@ public class 二叉树的公共祖先 {
         if(root==p||root==q){
             return root;
         }
+
         TreeNode left = lowestCommonAncestor(root.left,p,q);
         TreeNode right=lowestCommonAncestor(root.right,p,q);
+
         if(left==null&&right==null){ //left,right同时为空，说明root的左/右子树都不包含p,q,返回null
             return null;
         }
