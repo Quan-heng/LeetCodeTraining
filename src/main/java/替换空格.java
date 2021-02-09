@@ -14,8 +14,7 @@ public class 替换空格 {
             if(arr[i]!=' '){
                 sb.append(arr[i]);
             }else{
-                sb.append('%');
-                sb.append(20);
+                sb.append("20%");
             }
         }
         return sb.toString();
