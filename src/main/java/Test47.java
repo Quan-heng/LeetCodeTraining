@@ -29,17 +29,16 @@ public class Test47 {
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-            if (!used[i]) {
-                if ((i - 1 >= 0 && nums[i] == nums[i - 1] && used[i - 1])) {//剪枝
-                    continue;
-                }
-                list.add(nums[i]);
-                used[i] = true;
-                dfs(nums, list, used, result, depth + 1);
-                used[i] = false;
-                //reverse
-                list.removeLast();
+            if (used[i] || ((i - 1 >= 0 && nums[i] == nums[i - 1] && used[i - 1]))) {//剪枝
+                continue;
             }
+            list.add(nums[i]);
+            used[i] = true;
+            dfs(nums, list, used, result, depth + 1);
+            used[i] = false;
+            //reverse
+            list.removeLast();
         }
     }
 }
+
