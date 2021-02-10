@@ -27,7 +27,7 @@ public class 组合77 {
             for (int i = begin; i <= n; i++) {
                 list.add(i);
                 dfs(n, k, list, i + 1,res);
-                //重点理解这里：深度优先遍历有回头的过程，因此递归之前做了什么，递归之后需要做相同操作的逆向操作
+                //reverse 重点理解这里：深度优先遍历有回头的过程，因此递归之前做了什么，递归之后需要做相同操作的逆向操作
                 list.removeLast();
             }
         }
