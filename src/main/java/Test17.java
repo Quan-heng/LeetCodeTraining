@@ -7,11 +7,11 @@ import java.util.*;
 public class Test17 {
     public static void main(String[] args) {
         generateMap();
-        System.out.println(letterCombinations("23"));
+        System.out.println(letterCombinations("234"));
     }
-    public static Map<Integer, char[]> phoneMap = new HashMap<>();
+    public static Map<Integer, String> phoneMap = new HashMap<>();
     private static void generateMap() {
-        char begin = 'a';
+        /*char begin = 'a';
         int end;
         for (int i = 2; i <= 9; i++) {
             if (i == 7||i==9) {
@@ -24,7 +24,15 @@ public class Test17 {
                 chars[j] = begin++;
             }
             phoneMap.put(i, chars);
-        }
+        }*/
+        phoneMap.put(2,"abc");
+        phoneMap.put(3,"def");
+        phoneMap.put(4,"ghi");
+        phoneMap.put(5,"jkl");
+        phoneMap.put(6,"mno");
+        phoneMap.put(7,"pqrs");
+        phoneMap.put(8,"tuv");
+        phoneMap.put(9,"wxyz");
     }
 
     public static List<String> letterCombinations(String digits) {
@@ -48,9 +56,9 @@ public class Test17 {
             result.add(combineStr.toString());
             return;
         }
-        char[] charArr= phoneMap.get(numberList[depth]);
-        for (int i = 0; i < charArr.length; i++) {
-            combineStr.append(charArr[i]);
+        String value= phoneMap.get(numberList[depth]);
+        for (int i = 0; i < value.length(); i++) {
+            combineStr.append(value.charAt(i));
             dfs(numberList,combineStr,result,depth+1,max);
             //reverse
             combineStr.deleteCharAt(combineStr.length()-1);
