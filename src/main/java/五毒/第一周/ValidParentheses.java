@@ -1,4 +1,4 @@
-package 五毒;
+package 五毒.第一周;
 
 import java.util.Deque;
 import java.util.HashMap;

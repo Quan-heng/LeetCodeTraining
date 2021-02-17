@@ -1,8 +1,4 @@
-package 五毒;
-
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+package 五毒.第一周;
 
 public class ReverseLinkedList {
     public static void main(String[] args) {

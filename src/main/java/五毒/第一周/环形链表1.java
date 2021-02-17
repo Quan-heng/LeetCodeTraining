@@ -1,7 +1,6 @@
-package 五毒;
+package 五毒.第一周;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class 环形链表1 {

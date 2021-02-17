@@ -1,6 +1,4 @@
-package 五毒;
-
-import jdk.internal.org.objectweb.asm.Handle;
+package 五毒.第一周;
 
 public class ReverseNodeInKGroup {
     public static void main(String[] args) {
