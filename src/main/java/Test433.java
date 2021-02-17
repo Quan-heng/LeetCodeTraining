@@ -44,7 +44,7 @@ public class Test433 {
                         }
                     }
                 }
-                if (diff == 1) {
+                if (diff == 1) {//关键，与上一个基因必然相差一个不同元素
                     set.add(bank[i]);
                     dfs(set, bank[i], end, bank);
                     set.remove(bank[i]);
