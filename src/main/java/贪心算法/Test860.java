@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * 林檬水找零
  * 解题思路：贪心算法，先减去面值大的，然后减去面值小的
+ * 时间复杂度O(n)
+ * 空间复杂度O(1)
  */
 public class Test860 {
     public static void main(String[] args) {
@@ -43,6 +45,11 @@ public class Test860 {
         return true;
     }
 
+    /**
+     * 自己思考版：用HashMap保存钱的数量，时间复杂度较高
+     * @param bills
+     * @return
+     */
     public static boolean lemonadeChange1(int[] bills) {
         if (bills == null) {
             return false;
