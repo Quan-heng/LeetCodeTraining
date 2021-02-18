@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 林檬水找零
  * 解题思路：贪心算法，先减去面值大的，然后减去面值小的
- * 时间复杂度O(n)
+ * 时间复杂度O(n),其中n是bills 的长度
  * 空间复杂度O(1)
  */
 public class Test860 {
