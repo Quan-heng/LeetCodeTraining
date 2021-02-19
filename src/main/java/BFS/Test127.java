@@ -8,12 +8,20 @@ import java.util.*;
  */
 public class Test127 {
     public static void main(String[] args) {
-        String begin = "a";
-        String end = "c";
+        String begin = "ymain";
+        String end = "oecij";
         List<String> wordList = new ArrayList<>();
-        wordList.add("a");
-        wordList.add("b");
-        wordList.add("c");
+        wordList.add("ymann");
+        wordList.add("yycrj");
+        wordList.add("oecij");
+        wordList.add("ymcnj");
+        wordList.add("yzcrj");
+        wordList.add("yycij");
+        wordList.add("xecij");
+        wordList.add("yecij");
+        wordList.add("ymanj");
+        wordList.add("yzcnj");
+        wordList.add("ymain");
         System.out.println(ladderLength(begin, end, wordList));
     }
 
@@ -25,28 +33,41 @@ public class Test127 {
      * @param wordList
      * @return
      */
-    public static int ladderLength1(String beginWord, String endWord, List<String> wordList) {
+    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> wordSet = new HashSet<>(wordList);
         Set<String> visited = new HashSet<>();
         wordSet.remove(beginWord);
         Deque<String> queue = new LinkedList<>();
-        int res = 0;
+        int res = 1;
         queue.add(beginWord);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            for(int i=0;i<size;i++){
-                String curWord= queue.poll();//用26个字符去土替换没每一位
-                for(int j=0;j<curWord.length();j++){
-                    String temp = curWord;
-                    for(int k = 'a';k<='z';k++){
-
+            for (int i = 0; i < size; i++) {
+                String curWord = queue.poll();//用26个字符去土替换每一位
+                char[] charArray = curWord.toCharArray();
+                for (int j = 0; j < curWord.length(); j++) {
+                    char temp = charArray[j];
+                    for (int k = 'a'; k <= 'z'; k++) {
+                        if ((char)k == curWord.charAt(j)) {
+                            continue;
+                        }
+                        charArray[j] = (char) k;
+                        String newString = String.valueOf(charArray);
+                        if (wordSet.contains(newString) && !visited.contains(newString)) {
+                            if (newString.equals(endWord)) {
+                                return res + 1;
+                            } else {
+                                visited.add(newString);
+                                queue.add(newString);
+                            }
+                        }
                     }
-
+                    charArray[j]=temp;
                 }
-
             }
-
+            res++;
         }
+        return 0;
     }
 
     /**
