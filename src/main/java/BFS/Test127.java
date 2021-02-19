@@ -6,7 +6,7 @@ import java.util.*;
  * 单词接龙：
  * 思路：BFS
  */
-public class Test127 {
+public class  Test127 {
     public static void main(String[] args) {
         String begin = "ymain";
         String end = "oecij";
@@ -38,6 +38,7 @@ public class Test127 {
         Set<String> visited = new HashSet<>();
         wordSet.remove(beginWord);
         Deque<String> queue = new LinkedList<>();
+        Map<Integer,List<String>> map = new HashMap<>();
         int res = 1;
         queue.add(beginWord);
         while (!queue.isEmpty()) {
