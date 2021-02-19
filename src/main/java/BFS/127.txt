@@ -1,0 +1,58 @@
+package BFS;
+
+import java.util.*;
+
+/**
+ * 单词接龙：
+ * 思路：BFS
+ */
+public class Test127 {
+    public static void main(String[] args) {
+        String begin = "hit";
+        String end = "cog";
+        List<String> wordList = new ArrayList<>();
+        wordList.add("hot");
+        wordList.add("dot");
+        wordList.add("dog");
+        wordList.add("lot");
+        wordList.add("log");
+        wordList.add("cog");
+        System.out.println(ladderLength(begin, end, wordList));
+    }
+
+    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        Stack<String> stack = new Stack<>();
+        stack.add(beginWord);
+        int result = 0;
+        while (!stack.isEmpty()) {
+            int size = stack.size();
+            Stack<String> newStack = new Stack<>();
+            for (int i = 0; i < size; i++) {
+                String cur = stack.pop();
+                if (cur == endWord) {
+                    return result;
+                }
+                List<String> list = new ArrayList<>();
+                for (int j = 0; j < wordList.size(); j++) {
+                    String w = wordList.get(j);
+                    int diff = 0;
+                    for (int k = 0; k < w.length(); k++) {
+                        if (cur.charAt(k) != w.charAt(k)) {
+                            diff++;
+                        }
+                    }
+                    if (diff == 1) {
+                        list.add(w);
+                        newStack.add(w);
+                    }
+                }
+                if (list.size() > 0) {
+                    wordList.removeAll(list);
+                    result++;
+                }
+            }
+            stack = newStack;
+        }
+        return 0;
+    }
+}
