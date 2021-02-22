@@ -2,7 +2,7 @@ package 贪心算法;
 
 /**
  * 思路：贪心算法,
- * 从前往后跳，记录能跳跃的最大位置，记录下一步能跳跃的最大距离
+ * 从前往后跳，记录下一步能跳跃的最大距离
  */
 public class Test45 {
     public int jump(int[] nums) {

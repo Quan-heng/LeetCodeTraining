@@ -1,5 +1,9 @@
 package Lesson11_二分查找;
 
+/**
+ * 解题思路：二分查找，
+ * 找到左边有序数组的右边界，右边界后面的第一个元素就是最小值
+ */
 public class Test153 {
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,3};
