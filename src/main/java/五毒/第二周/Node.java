@@ -16,4 +16,4 @@ class Node {
         val = _val;
         children = _children;
     }
-};
+}
