@@ -10,11 +10,25 @@ import java.util.List;
  * res = dp[0][0]
  */
 public class triangle_min_path {
-    public int minimumTotal(List<List<Integer>> triangle) {
+
+    public static void main(String[] args) {
+        List<List<Integer>> arr = new ArrayList<>();
+        List<Integer> list1  = new ArrayList<>();
+        list1.add(1);
+        List<Integer> list2  = new ArrayList<>();
+        list2.add(3);
+        list2.add(4);
+        arr.add(list1);
+        arr.add(list2);
+        System.out.println(minimumTotal(arr));
+
+    }
+    public static int minimumTotal(List<List<Integer>> triangle) {
         //因为按层递归，只需一维dp即可
-        int[] dp = new int[triangle.get(triangle.size() - 1).size()+1];//技巧：假设最下层多一层全为零的边
-        for (int i = triangle.size() - 1; i >= 0; i--) {
-            for (int j = 0; j < triangle.get(i).size(); j++) {
+        int row = triangle.size();
+        int[] dp = new int[row+1];//技巧：假设最下层多一层全为零的边
+        for (int i = row - 1; i >= 0; i--) {
+            for (int j = 0; j < i+1; j++) {//第i行，有i+1个数
                 dp[j] = Math.min(dp[j], dp[j+1]) + triangle.get(i).get(j);
             }
         }
