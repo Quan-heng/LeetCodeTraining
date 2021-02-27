@@ -8,6 +8,8 @@ import java.util.List;
  * 解题思路：
  * dp[i][j] = min(triangle[i+1][j] + triangle[i+1][j+1])+triangle[i][j]
  * res = dp[0][0]
+ * 时间复杂度为O((1+n)*n/2)) -> O(n^2)
+ * 空间复杂度O(n)
  */
 public class triangle_min_path {
 
@@ -21,7 +23,6 @@ public class triangle_min_path {
         arr.add(list1);
         arr.add(list2);
         System.out.println(minimumTotal(arr));
-
     }
     public static int minimumTotal(List<List<Integer>> triangle) {
         //因为按层递归，只需一维dp即可
