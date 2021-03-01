@@ -119,9 +119,6 @@ public class serialize_and_deseriaize_binary_tree {
                 if (array[count].equals("null")) {
                     right = null;
                 } else {
-                    right = new TreeNode(Integer.valueOf(array[count]));
-                }
-                count++;
 
                 root.left = left;
                 root.right = right;
