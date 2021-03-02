@@ -1,4 +1,4 @@
-package 五毒.第一周;
+package 五毒.第一周.第一遍;
 
 public class Leet283 {
     public void moveZeroes(int[] nums) {
