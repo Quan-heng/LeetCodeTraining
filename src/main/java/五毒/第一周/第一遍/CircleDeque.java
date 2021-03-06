@@ -80,6 +80,7 @@ class MyCircularDeque {
     }
 
     /**
+     *
      * Checks whether the circular deque is empty or not.
      */
     public boolean isEmpty() {
