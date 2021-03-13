@@ -4,6 +4,7 @@ public class max_sum_of_rectangle_no_larger_than_k {
     public int maxSumSubmatrix(int[][] matrix, int k) {
         int m = matrix.length;
         int n = matrix[0].length;
+
         int max = Integer.MIN_VALUE;
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
