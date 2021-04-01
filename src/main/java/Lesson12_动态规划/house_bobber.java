@@ -27,9 +27,6 @@ public class house_bobber {
     }
 
 
-
-    curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"superadmin@kukaplus.com", "password":"superadmin"}' 'http://localhost:8080/api/auth/login'
-
     /**
      * 空间复杂度o(1)
      *
