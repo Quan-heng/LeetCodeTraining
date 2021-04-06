@@ -2,7 +2,7 @@ package 五毒.第一周.第二遍;
 
 import java.util.Stack;
 
-public class MinStack {
+class MinStack {
     private Stack<Integer> minStack;
     private Stack<Integer> valueStack;
 
