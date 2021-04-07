@@ -12,11 +12,7 @@ public class group_anagrams {
             List<String> list = map.getOrDefault(sortedStr,new ArrayList<>());
             list.add(strs[i]);
             map.put(sortedStr,list);
-        }
-        List<List<String>> result = new ArrayList<>();
-        map.values().forEach(a->{
-            result.add(a);
-        });
-        return result;
+        };
+        return new ArrayList<>(map.values());
     }
 }
