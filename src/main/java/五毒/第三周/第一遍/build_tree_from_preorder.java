@@ -1,6 +1,4 @@
-package 五毒.第三周;
-
-import java.util.Arrays;
+package 五毒.第三周.第一遍;
 
 public class build_tree_from_preorder {
     public static void main(String[] args) {
