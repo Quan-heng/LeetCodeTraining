@@ -1,22 +1,18 @@
-package 五毒.第二周;
+package 五毒.第二周.第二遍;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
-public class zui_xiao_de_kge_shu_lcof {
+public class zui_xiao_de_kge_shu {
     public int[] getLeastNumbers(int[] arr, int k) {
-        if(arr==null||k==0||arr.length<k){
-            return new int[]{};
-        }
-        PriorityQueue<Integer> queue = new PriorityQueue<>();
         int[] result = new int[k];
+        Queue<Integer> queue = new PriorityQueue<>();
         for (int i = 0; i < arr.length; i++) {
             queue.offer(arr[i]);
         }
-        for(int i=0;i<4;i++){
+        for (int i = 0; i < k; i++) {
             result[i] = queue.poll();
         }
         return result;
     }
-
-
 }

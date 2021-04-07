@@ -1,8 +1,8 @@
-package 五毒.第二周;
+package 五毒.第二周.第二遍;
 
 import java.util.List;
 
-class Node {
+public class Node {
     public int val;
     public List<Node> children;
 
