@@ -1,9 +1,9 @@
-package 五毒.第三周.第二;
+package 五毒.第三周.第二遍;
 
 import java.util.*;
 
 public class serialize_and_deserialize_binary_tree {
-    public String serialize(TreeNode root) {
+    public String serialize(invert_binary_tree.TreeNode root) {
         if(root==null){
             return "X";
         }
@@ -11,17 +11,17 @@ public class serialize_and_deserialize_binary_tree {
     }
 
     // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
+    public invert_binary_tree.TreeNode deserialize(String data) {
         Deque<String> queue = new LinkedList<>(Arrays.asList(data.split(",")));
         return buildTree(queue);
     }
 
-    public TreeNode buildTree(Deque<String> queue){
+    public invert_binary_tree.TreeNode buildTree(Deque<String> queue){
         String val = queue.poll();
         if(val.equals("X")){
             return null;
         }
-        TreeNode root = new TreeNode(Integer.valueOf(val));
+        invert_binary_tree.TreeNode root = new invert_binary_tree.TreeNode(Integer.valueOf(val));
         root.left = buildTree(queue);
         root.right = buildTree(queue);
         return root;

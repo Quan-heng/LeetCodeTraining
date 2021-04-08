@@ -1,4 +1,4 @@
-package 五毒.第三周.第二;
+package 五毒.第三周.第二遍;
 
 public class powx_n {
     public static double myPow(double x, int n) {

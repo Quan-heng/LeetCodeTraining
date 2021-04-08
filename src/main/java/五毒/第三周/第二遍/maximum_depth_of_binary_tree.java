@@ -1,21 +1,21 @@
-package 五毒.第三周.第二;
+package 五毒.第三周.第二遍;
 
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class maximum_depth_of_binary_tree {
-    public int maxDepth(TreeNode root) {
+    public int maxDepth(invert_binary_tree.TreeNode root) {
         if(root==null){
             return 0;
         }
         int depth = 0;
-        Deque<TreeNode> queue = new LinkedList<>();
+        Deque<invert_binary_tree.TreeNode> queue = new LinkedList<>();
         queue.offerFirst(root);
         while(!queue.isEmpty()){
             int size = queue.size();
             depth++;
             for(int i=0;i<size;i++){
-                TreeNode temp = queue.removeLast();
+                invert_binary_tree.TreeNode temp = queue.removeLast();
                 if(temp.left!=null){
                     queue.offerFirst(temp.left);
                 }
