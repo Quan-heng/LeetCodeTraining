@@ -1,8 +1,7 @@
-package 五毒.第三周;
+package 五毒.第三周.第一遍;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 
 /**
  * 解题思路：利二叉搜索树的中序遍历是升序的特性
