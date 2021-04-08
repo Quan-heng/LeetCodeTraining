@@ -24,10 +24,6 @@ public class letter_combinations_of_a_phone_number {
         phoneMap.put('8',"tuv");
         phoneMap.put('9',"wxyz");
         String content="";
-        List<String> stringList = new ArrayList<>();
-        for (int i = 0; i < digits.length(); i++) {
-            stringList.add(phoneMap.get(digits.charAt(i)));
-        }
         dfs(phoneMap,result,content,0,digits);
         return result;
     }
