@@ -1,7 +1,5 @@
 package Lesson14_字典树和并查集;
 
-import 五毒.第四周.TreeNode;
-
 class implement_trie_prefix_tree {
     public static void main(String[] args) {
         Trie obj = new Trie();
