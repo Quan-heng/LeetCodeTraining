@@ -30,6 +30,5 @@ public class permutations {
                 list.remove(list.size()-1);
             }
         }
-
     }
 }
