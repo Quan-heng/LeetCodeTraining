@@ -1,10 +1,15 @@
 package main
 
+import "sort"
+
 func permuteUnique(nums []int) [][]int {
 	result := make([][]int, 0)
 	if len(nums) == 0 {
 		return result
 	}
+	sort.Slice(nums, func(i, j int) bool {
+		return nums[i] < nums[j]
+	})
 	list := make([]int, 0)
 	visited := make([]bool, len(nums))
 	depth := 0
