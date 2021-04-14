@@ -28,9 +28,7 @@ func levelOrder(root *TreeNode) [][]int {
 				queue = append(queue, curNode.Right)
 			}
 		}
-		newList := make([]int, len(subList))
-		copy(newList, subList)
-		result = append(result, newList)
+		result = append(result, subList)
 	}
 	return result
 }
