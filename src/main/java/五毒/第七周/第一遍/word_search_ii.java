@@ -16,41 +16,45 @@ public class word_search_ii {
         for (int i = 0; i < words.length; i++) {
             trie.insert(words[i]);
         }
+        boolean[][] visited = new boolean[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                dfs(result, "",new HashSet<>(), i, j, board, wordSet);
+                dfs(result, "", visited, i, j, board, wordSet);
             }
         }
         return result;
     }
 
-    private void dfs(List<String> result, String str,Set<String> visited, int i, int j, char[][] board, Set<String> wordSet) {
+    private void dfs(List<String> result, String str, boolean[][] visited, int i, int j, char[][] board, Set<String> wordSet) {
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
             return;
         }
 
-        String newStr = str+board[i][j];
-        if(wordSet.isEmpty()){
-            return;
-        }
-        if (visited.contains(i + "," + j)) {
+        String newStr = str + board[i][j];
+        if (wordSet.isEmpty()) {
             return;
         }
 
-        if(!trie.startsWith(newStr)){
+        if (visited[i][j]) {
             return;
         }
-        if(wordSet.contains(newStr)){
+        if (!trie.startsWith(newStr)) {
+            return;
+        }
+        if (wordSet.contains(newStr)) {
             result.add(newStr);
             wordSet.remove(newStr);
         }
 
 
-        visited.add(i+","+j);
-        dfs(result,newStr,visited,i-1,j,board,wordSet);
-        dfs(result,newStr,visited,i+1,j,board,wordSet);
-        dfs(result,newStr,visited,i,j-1,board,wordSet);
-        dfs(result,newStr,visited,i,j+1,board,wordSet);
+        int[] dx = new int[]{0, -1, 0, 1};
+        int[] dy = new int[]{-1, 0, 1, 0};
+        visited[i][j] = true;
+        for (int k = 0; k < 4; k++) {
+            dfs(result, newStr, visited, i + dx[k], j + dy[k], board, wordSet);
+        }
+        visited[i][j] =false;
+
     }
 
     private class Trie {
