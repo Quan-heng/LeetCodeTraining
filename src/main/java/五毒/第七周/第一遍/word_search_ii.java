@@ -54,7 +54,6 @@ public class word_search_ii {
             dfs(result, newStr, visited, i + dx[k], j + dy[k], board, wordSet);
         }
         visited[i][j] =false;
-
     }
 
     private class Trie {
