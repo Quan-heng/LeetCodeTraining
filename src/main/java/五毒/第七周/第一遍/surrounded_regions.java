@@ -28,14 +28,12 @@ public class surrounded_regions {
         if (i < 0 || i >= m || j < 0 || j >= n || board[i][j] == '#') {
             return;
         }
-        if (board[i][j] == 'O') {
-            board[i][j] = '#';
-        }
+        if (board[i][j] != 'O') return;
+        board[i][j] = '#';
         dfs(i - 1, j, m, n, board);
         dfs(i + 1, j, m, n, board);
         dfs(i, j + 1, m, n, board);
         dfs(i, j - 1, m, n, board);
     }
-
 
 }
