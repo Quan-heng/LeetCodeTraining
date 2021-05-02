@@ -16,7 +16,7 @@ public class word_ladder {
         Set<String> right = new HashSet<>();
         right.add(endWord);
         Set<String> visited = new HashSet<>();
-        int length = 0;
+        int length = 1;
         while (!left.isEmpty() && !right.isEmpty()) {
             if (left.size() > right.size()) {
                 Set<String> temp = left ;
