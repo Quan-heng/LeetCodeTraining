@@ -37,12 +37,15 @@ class LRUCache {
         moveToHead(node);
         return node.value;
     }
-
-    private void moveToHead(DlinkNode node) {
+    private void addToHead(DlinkNode node){
         node.pre = head;
         node.next = head.next;
         head.next.pre = node;
         head.next = node;
+    }
+    private void moveToHead(DlinkNode node) {
+        removeNode(node);
+        addToHead(node);
     }
 
     public void put(int key, int value) {
@@ -50,24 +53,25 @@ class LRUCache {
         if(node==null){
             DlinkNode newNode = new DlinkNode(key,value);
             _cathe.put(key,newNode);
-            moveToHead(newNode);
+            addToHead(newNode);
             size++;
             if(size>capacity){
-                removeTail();
+                DlinkNode tailNode = tail.pre;
+                _cathe.remove(tailNode.key);
+                removeTail(tailNode);
             }
         }else{
             node.value = value;
+            _cathe.put(key,node);
             moveToHead(node);
         }
     }
 
-    private void removeTail() {
-        DlinkNode node = tail.pre;
-        removeNode(node);
+    private void removeTail(DlinkNode tail) {
+        removeNode(tail);
     }
 
     private void removeNode(DlinkNode node) {
-        _cathe.remove(node.key);
         node.pre.next = node.next;
         node.next.pre = node.pre;
     }
